@@ -1,4 +1,4 @@
-package com.masum.paging3.model
+package com.masum.paging3.data.remot
 
 data class Beer(
     val id: Int,
