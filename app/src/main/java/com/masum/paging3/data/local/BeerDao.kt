@@ -14,6 +14,6 @@ interface BeerDao {
     @Query("Select * FROM beerentity")
     fun pagingSource():PagingSource<Int,BeerEntity>
 
-    @Query("SELECT * FROM beerentity")
+    @Query("DELETE FROM beerentity")
     suspend fun clearAll()
 }
