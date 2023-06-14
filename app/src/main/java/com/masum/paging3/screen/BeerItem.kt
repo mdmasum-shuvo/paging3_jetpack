@@ -1,9 +1,6 @@
 package com.masum.paging3.screen
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.Card
 import androidx.compose.material.Colors
 import androidx.compose.material.MaterialTheme
@@ -27,8 +24,10 @@ fun BeerItem(beer: Beer, modifier: Modifier = Modifier) {
     Card(modifier = modifier, elevation = 4.dp) {
         Row(modifier = Modifier
             .fillMaxWidth()
-            .padding(8.dp)) {
+            .padding(8.dp)
+            .height(200.dp)) {
             AsyncImage(model =beer.imageUrl, contentDescription = "",modifier=Modifier.weight(1f))
+            Spacer(modifier = Modifier.width(8.dp))
             Column(modifier = Modifier.weight(3f)) {
                 Text(text = beer.name, style = MaterialTheme.typography.h6)
                 Text(text = beer.tagline, style = TextStyle(fontSize = 14.sp, color = Color.Gray))

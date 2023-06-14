@@ -8,6 +8,7 @@ import androidx.room.withTransaction
 import com.masum.paging3.data.local.BeerDatabase
 import com.masum.paging3.data.local.BeerEntity
 import com.masum.paging3.data.toBeerEntity
+import kotlinx.coroutines.delay
 import retrofit2.HttpException
 import java.io.IOException
 
@@ -34,6 +35,7 @@ class BeerRemoteMediator(private val beerDb: BeerDatabase, private val beerApi: 
                     }
                 }
             }
+            delay(2000)
             val beers = beerApi.getBeers(page = loadKey)
             beerDb.withTransaction {
                 if (loadType == LoadType.REFRESH) {

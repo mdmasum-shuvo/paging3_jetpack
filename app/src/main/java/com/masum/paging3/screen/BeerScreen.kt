@@ -36,7 +36,6 @@ fun BeerScreen(beers: LazyPagingItems<Beer>) {
 
     Box(modifier = Modifier.fillMaxSize()) {
 
-
         if (beers.loadState.refresh is LoadState.Loading) {
             CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
         } else {
@@ -46,7 +45,9 @@ fun BeerScreen(beers: LazyPagingItems<Beer>) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 items(beers){ item->
-
+                    if (item != null) {
+                        BeerItem(beer = item)
+                    }
                 }
 
                 item {
@@ -54,10 +55,7 @@ fun BeerScreen(beers: LazyPagingItems<Beer>) {
                         CircularProgressIndicator()
                     }
                 }
-
-
             }
-
         }
     }
 
