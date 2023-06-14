@@ -34,6 +34,7 @@ fun BeerItem(beer: Beer, modifier: Modifier = Modifier) {
                 Text(text = beer.description, style = TextStyle(fontSize = 14.sp))
                 beer.firstBrewed?.let { Text(text = it, style = TextStyle(fontSize = 14.sp, color = Color.Gray), textAlign = TextAlign.End) }
 
+
             }
 
         }
